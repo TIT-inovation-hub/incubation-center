@@ -85,7 +85,7 @@ const CustomCursor: React.FC = () => {
       if (typeof window === "undefined") return;
 
       setGhosts((prev) => {
-        if (prev.filter((g) => g.alive).length >= 25) return prev; // limit
+        if (prev.filter((g) => g.alive).length >= 10) return prev; // limit
         const x = Math.random() * (window.innerWidth - 40);
         const y = Math.random() * (window.innerHeight - 100);
 
