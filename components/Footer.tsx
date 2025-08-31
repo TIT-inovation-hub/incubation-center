@@ -56,8 +56,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Ready to Collaborate?</h4>
             <p className="text-sm text-gray-400">
-              Let's discuss your next project and bring your ideas to life.
+              Let&apos;s discuss your next project and bring your ideas to life.
             </p>
+
             <Button
               onClick={() => scrollToSection("#contact")}
               className="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white"
