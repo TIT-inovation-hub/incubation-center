@@ -23,6 +23,7 @@ const CustomCursor: React.FC = () => {
   const [firing, setFiring] = useState(false);
   const [bullets, setBullets] = useState<Bullet[]>([]);
   const [ghosts, setGhosts] = useState<Ghost[]>([]);
+  const [score, setScore] = useState(0);
   const rafRef = useRef<number | null>(null);
   const ghostIdRef = useRef(0);
 
@@ -78,17 +79,18 @@ const CustomCursor: React.FC = () => {
     };
   }, [position]);
 
-  // Ghost spawning
+  // Ghost spawning with max 25 limit
   useEffect(() => {
     const spawnGhost = () => {
       if (typeof window === "undefined") return;
-      const x = Math.random() * (window.innerWidth - 40);
-      const y = Math.random() * (window.innerHeight - 100);
 
-      setGhosts((prev) => [
-        ...prev,
-        { id: ghostIdRef.current++, x, y, alive: true },
-      ]);
+      setGhosts((prev) => {
+        if (prev.filter((g) => g.alive).length >= 25) return prev; // limit
+        const x = Math.random() * (window.innerWidth - 40);
+        const y = Math.random() * (window.innerHeight - 100);
+
+        return [...prev, { id: ghostIdRef.current++, x, y, alive: true }];
+      });
     };
 
     const interval = setInterval(spawnGhost, 3000); // every 3s
@@ -133,8 +135,8 @@ const CustomCursor: React.FC = () => {
       );
 
       // Check bullet ↔ ghost collisions
-      setGhosts((prevGhosts) => {
-        return prevGhosts.map((ghost) => {
+      setGhosts((prevGhosts) =>
+        prevGhosts.map((ghost) => {
           if (!ghost.alive) return ghost;
 
           for (const b of bullets) {
@@ -143,13 +145,14 @@ const CustomCursor: React.FC = () => {
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < 20) {
-              // Kill ghost
+              // Kill ghost + increase score
+              setScore((s) => s + 1);
               return { ...ghost, alive: false };
             }
           }
           return ghost;
-        });
-      });
+        })
+      );
 
       rafRef.current = requestAnimationFrame(updateBullets);
     };
@@ -223,6 +226,15 @@ const CustomCursor: React.FC = () => {
               style={{ left: g.x, top: g.y }}
             />
           ))}
+      </div>
+
+      {/* Score */}
+      <div className="fixed top-4 right-6 z-50">
+        <div className="px-4 py-2 rounded-lg bg-black/60 backdrop-blur-sm border border-white/10">
+          <p className="text-lg font-medium text-white tracking-tight">
+            Score: <span className="font-semibold">{score}</span>
+          </p>
+        </div>
       </div>
     </>
   );
