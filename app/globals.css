@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+* {
+  cursor: none !important;
+}
+
+* {
+  user-select: none;
+}
+
+@keyframes muzzle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.animate-muzzle {
+  animation: muzzle 0.12s forwards;
+}
