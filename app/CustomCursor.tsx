@@ -11,22 +11,29 @@ type Bullet = {
   resting: boolean;
 };
 
+type Ghost = {
+  id: number;
+  x: number;
+  y: number;
+  alive: boolean;
+};
+
 const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [firing, setFiring] = useState(false);
   const [bullets, setBullets] = useState<Bullet[]>([]);
+  const [ghosts, setGhosts] = useState<Ghost[]>([]);
   const rafRef = useRef<number | null>(null);
+  const ghostIdRef = useRef(0);
 
   const gravity = 0.6;
   const friction = 0.8;
 
-  // Memoize floorY so it doesn’t trigger lint warnings
   const floorY = useMemo(
     () => (typeof window !== "undefined" ? window.innerHeight - 8 : 0),
     []
   );
 
-  // Preload sound and memoize
   const gunSoundRef = useRef<HTMLAudioElement | null>(null);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -71,7 +78,24 @@ const CustomCursor: React.FC = () => {
     };
   }, [position]);
 
-  // Animate bullets with physics
+  // Ghost spawning
+  useEffect(() => {
+    const spawnGhost = () => {
+      if (typeof window === "undefined") return;
+      const x = Math.random() * (window.innerWidth - 40);
+      const y = Math.random() * (window.innerHeight - 100);
+
+      setGhosts((prev) => [
+        ...prev,
+        { id: ghostIdRef.current++, x, y, alive: true },
+      ]);
+    };
+
+    const interval = setInterval(spawnGhost, 3000); // every 3s
+    return () => clearInterval(interval);
+  }, []);
+
+  // Animate bullets and check collisions
   useEffect(() => {
     const updateBullets = () => {
       setBullets((prev) =>
@@ -79,7 +103,6 @@ const CustomCursor: React.FC = () => {
           if (b.resting) return b;
 
           let { x, y, vx, vy } = b;
-
           vy += gravity;
           x += vx;
           y += vy;
@@ -109,6 +132,25 @@ const CustomCursor: React.FC = () => {
         })
       );
 
+      // Check bullet ↔ ghost collisions
+      setGhosts((prevGhosts) => {
+        return prevGhosts.map((ghost) => {
+          if (!ghost.alive) return ghost;
+
+          for (const b of bullets) {
+            const dx = b.x - ghost.x;
+            const dy = b.y - ghost.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 20) {
+              // Kill ghost
+              return { ...ghost, alive: false };
+            }
+          }
+          return ghost;
+        });
+      });
+
       rafRef.current = requestAnimationFrame(updateBullets);
     };
 
@@ -117,7 +159,7 @@ const CustomCursor: React.FC = () => {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [floorY, gravity, friction]);
+  }, [floorY, gravity, friction, bullets]);
 
   return (
     <>
@@ -164,6 +206,23 @@ const CustomCursor: React.FC = () => {
             }}
           />
         ))}
+      </div>
+
+      {/* Ghosts */}
+      <div className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-30">
+        {ghosts
+          .filter((g) => g.alive)
+          .map((g) => (
+            <Image
+              key={g.id}
+              src="/ghost.png"
+              alt="Ghost"
+              width={40}
+              height={40}
+              className="absolute animate-bounce"
+              style={{ left: g.x, top: g.y }}
+            />
+          ))}
       </div>
     </>
   );
