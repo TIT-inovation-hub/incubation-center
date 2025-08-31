@@ -1,4 +1,4 @@
-"use client"; // needed if using in app/ directory with Next.js 13+
+"use client";
 
 import React from "react";
 import { ArrowRight, Users } from "lucide-react";

@@ -8,7 +8,7 @@ type Bullet = {
   y: number;
   vx: number;
   vy: number;
-  resting: boolean; // new flag for bullets that landed
+  resting: boolean;
 };
 
 const CustomCursor: React.FC = () => {
@@ -18,8 +18,8 @@ const CustomCursor: React.FC = () => {
   const rafRef = useRef<number | null>(null);
 
   const gravity = 0.6;
-  const friction = 0.8; // reduce bounce
-  const floorY = typeof window !== "undefined" ? window.innerHeight - 8 : 0; // floor (adjusted for bullet size)
+  const friction = 0.8;
+  const floorY = typeof window !== "undefined" ? window.innerHeight - 8 : 0;
 
   // Preload sound
   const gunSound =
@@ -44,8 +44,8 @@ const CustomCursor: React.FC = () => {
         {
           x: position.x,
           y: position.y,
-          vx: -40, // shoot left
-          vy: -10, // little upward force
+          vx: -40,
+          vy: -10,
           resting: false,
         },
       ]);
@@ -82,7 +82,7 @@ const CustomCursor: React.FC = () => {
           if (y >= floorY) {
             y = floorY;
             vy = 0;
-            vx *= 0.5; // slow down
+            vx *= 0.5;
             if (Math.abs(vx) < 0.5) {
               vx = 0;
               return { ...b, x, y, vx, vy, resting: true };
@@ -142,20 +142,19 @@ const CustomCursor: React.FC = () => {
       </div>
 
       {/* Bullets */}
-      {/* Bullets */}
       <div className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-40">
         {bullets.map((b, i) => (
           <Image
             key={i}
             src="/bullet.png"
             alt="Bullet"
-            width={16} // adjust size
+            width={16}
             height={16}
             className="absolute"
             style={{
               left: b.x,
               top: b.y,
-              transform: `rotate(${Math.atan2(b.vy, b.vx)}rad)`, // rotate in direction of travel
+              transform: `rotate(${Math.atan2(b.vy, b.vx)}rad)`,
             }}
           />
         ))}
