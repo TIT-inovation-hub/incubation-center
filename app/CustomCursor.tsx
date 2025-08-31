@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 
 type Bullet = {
@@ -19,12 +19,21 @@ const CustomCursor: React.FC = () => {
 
   const gravity = 0.6;
   const friction = 0.8;
-  const floorY = typeof window !== "undefined" ? window.innerHeight - 8 : 0;
 
-  // Preload sound
-  const gunSound =
-    typeof window !== "undefined" ? new Audio("/shoot.aac") : null;
-  if (gunSound) gunSound.volume = 0.5;
+  // Memoize floorY so it doesn’t trigger lint warnings
+  const floorY = useMemo(
+    () => (typeof window !== "undefined" ? window.innerHeight - 8 : 0),
+    []
+  );
+
+  // Preload sound and memoize
+  const gunSoundRef = useRef<HTMLAudioElement | null>(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gunSoundRef.current = new Audio("/shoot.aac");
+      gunSoundRef.current.volume = 0.5;
+    }
+  }, []);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -33,12 +42,12 @@ const CustomCursor: React.FC = () => {
 
     const handleClick = () => {
       setFiring(true);
-      if (gunSound) {
-        gunSound.currentTime = 0;
-        gunSound.play();
+
+      if (gunSoundRef.current) {
+        gunSoundRef.current.currentTime = 0;
+        gunSoundRef.current.play();
       }
 
-      // Spawn bullet
       setBullets((prev) => [
         ...prev,
         {
@@ -71,10 +80,7 @@ const CustomCursor: React.FC = () => {
 
           let { x, y, vx, vy } = b;
 
-          // Apply gravity
           vy += gravity;
-
-          // Move
           x += vx;
           y += vy;
 
@@ -111,7 +117,7 @@ const CustomCursor: React.FC = () => {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [floorY, gravity, friction]);
 
   return (
     <>
