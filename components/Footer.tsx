@@ -1,13 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Heart, ArrowUp } from "lucide-react";
+import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "About Us", href: "#about" },
+  { label: "Programs", href: "#programs" },
+  { label: "Startups", href: "#startups" },
+  { label: "Mentors", href: "#mentors" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -25,12 +25,14 @@ export function Footer() {
     <footer className="bg-black border-t border-gray-800 text-gray-300">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Brand */}
+          {/* Brand / About */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">Prakhar Shrivastav</h3>
-            <p className="text-gray-400">
-              Full-Stack Developer & CTO passionate about building innovative
-              solutions that make a difference.
+            <h3 className="text-xl font-bold text-white">
+              Innovation & Incubation Cell
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Empowering young innovators and startups with mentorship,
+              resources, and a thriving entrepreneurial ecosystem.
             </p>
           </div>
 
@@ -52,12 +54,23 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Contact CTA */}
+          {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-white">Ready to Collaborate?</h4>
-            <p className="text-sm text-gray-400">
-              Let&apos;s discuss your next project and bring your ideas to life.
-            </p>
+            <h4 className="font-semibold text-white">Contact Us</h4>
+            <div className="text-sm text-gray-400 space-y-2">
+              <p className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-gray-500" />
+                Incubation Cell, Your Institute/Organization
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-gray-500" />
+                +91 98765 43210
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-gray-500" />
+                contact@incubationcell.org
+              </p>
+            </div>
 
             <Button
               onClick={() => scrollToSection("#contact")}
@@ -68,11 +81,11 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            © 2024 Prakhar Shrivastav. Made with{" "}
-            <Heart className="inline h-4 w-4 text-red-500" /> using Next.js &
-            shadcn/ui
+            © {new Date().getFullYear()} Innovation & Incubation Cell. All
+            rights reserved.
           </p>
 
           <Button
