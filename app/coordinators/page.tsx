@@ -23,7 +23,7 @@ export default function HallOfFame() {
         "https://media.licdn.com/dms/image/v2/D4D03AQHRuQHlYd0YyQ/profile-displayphoto-shrink_800_800/B4DZZJVbhJH4Ac-/0/1744987078803?e=1760572800&v=beta&t=XYRfbsI1INugUzSUcHSOXqe5CqRFkkAPlK4PGtpB9ok",
       socials: {
         github: "https://github.com/shreyashristi25",
-        linkedin: "https://www.linkedin.com/in/aman-mishra-116b6328",
+        linkedin: "https://www.linkedin.com/in/aman-mishra-116b63280",
         instagram: "https://www.instagram.com/shristi_shreya002",
       },
     },

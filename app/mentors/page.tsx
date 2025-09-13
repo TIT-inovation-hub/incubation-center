@@ -23,7 +23,7 @@ export default function HallOfFame() {
         "https://media.licdn.com/dms/image/v2/D4D03AQF3sb5Gohc5Bw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693071457900?e=1760572800&v=beta&t=J_okTDmTCRBpOyQsKo72ZOo_W6YWXzO0yJYr-uIq8T0",
       socials: {
         github: "https://github.com/shreyashristi25",
-        linkedin: "https://www.linkedin.com/in/shreya-shristi-27410526b",
+        linkedin: "https://www.linkedin.com/in/amar-nayak-11945376/",
         instagram: "https://www.instagram.com/shristi_shreya002",
       },
     },
