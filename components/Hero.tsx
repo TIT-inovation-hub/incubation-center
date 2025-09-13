@@ -11,17 +11,23 @@ const Hero: React.FC = () => {
     >
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
             Build the{" "}
             <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
               Future
             </span>
           </h1>
 
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          {/* 👇 Desktop Text */}
+          <p className="hidden sm:block text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
             Transform your innovative ideas into successful startups with expert
             mentorship, funding support, and a thriving entrepreneurial
             community.
+          </p>
+
+          {/* 👇 Mobile Text */}
+          <p className="block sm:hidden text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Transform your innovative ideas into successful startups.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -49,11 +55,11 @@ const Hero: React.FC = () => {
 
           <div className="grid grid-cols-3 gap-8 pt-16 max-w-2xl mx-auto">
             <div className="text-center">
-              <p className="text-3xl font-bold text-white mb-2">500+</p>
+              <p className="text-3xl font-bold text-white mb-2">10+</p>
               <p className="text-sm text-gray-400">Students</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-white mb-2">120+</p>
+              <p className="text-3xl font-bold text-white mb-2">4+</p>
               <p className="text-sm text-gray-400">Startups</p>
             </div>
             <div className="text-center">

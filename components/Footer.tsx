@@ -1,24 +1,19 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUp, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 const quickLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Programs", href: "#programs" },
-  { label: "Startups", href: "#startups" },
-  { label: "Mentors", href: "#mentors" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Coordinators", href: "/coordinators" },
+  { label: "Mentors", href: "/mentors" },
+  { label: "Hackathons", href: "/hackathons" },
 ];
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace("#", ""));
-    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -41,15 +36,13 @@ export function Footer() {
             <h4 className="font-semibold text-white">Quick Links</h4>
             <div className="flex flex-col space-y-2">
               {quickLinks.map((link) => (
-                <Button
+                <Link
+                  href={link.href}
                   key={link.label}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => scrollToSection(link.href)}
-                  className="justify-start p-0 h-auto text-gray-400 hover:text-white"
+                  className="justify-start p-0 h-auto text-gray-400 hover:text-white hover:underline"
                 >
                   {link.label}
-                </Button>
+                </Link>
               ))}
             </div>
           </div>
@@ -60,20 +53,21 @@ export function Footer() {
             <div className="text-sm text-gray-400 space-y-2">
               <p className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gray-500" />
-                Incubation Cell, Your Institute/Organization
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-gray-500" />
-                +91 98765 43210
+                Incubation Cell, TIT-E, F-2
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-gray-500" />
-                contact@incubationcell.org
+                Incubationtit@gmail.com
               </p>
             </div>
 
             <Button
-              onClick={() => scrollToSection("#contact")}
+              onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=Incubationtit@gmail.com",
+                  "_blank"
+                )
+              }
               className="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white"
             >
               Get In Touch

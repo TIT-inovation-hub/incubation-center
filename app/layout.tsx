@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Share_Tech_Mono } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { FloatingNav } from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"] });
+
+const shareTechMono = Share_Tech_Mono({
+  subsets: ["latin"],
+  weight: "400", // this font only has 400
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +33,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "Coordinators", link: "/coordinators" },
+    { name: "Mentors", link: "/mentors" },
+    { name: "Hackathons", link: "/hackathons", isSpecial: true },
+  ];
   return (
     <html lang="en" className={inter.className}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${shareTechMono.className} antialiased`}
       >
+        <FloatingNav navItems={navItems} />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -35,28 +35,31 @@ const CustomCursor: React.FC = () => {
     []
   );
 
-  const thoughts = [
-    "SIH25001: Smart Community Health Monitoring and Early Warning System for Water-Borne Diseases in Rural Northeast India",
-    "SIH25002: Smart Tourist Safety Monitoring & Incident Response System using AI, Geo-Fencing, and Blockchain-based Digital ID",
-    "SIH25003: Low-Cost smart transportation solution for agri produce from remote farms to nearest motorable road in NER Region",
-    "SIH25004: Image based breed recognition for cattle and buffaloes of India",
-    "SIH25006: Development of a Digital Farm Management Portal for implementing biosecurity measures in Pig and Poultry Farms",
-    "SIH25008: Disaster Preparedness and Response Education System for Schools and Colleges",
-    "SIH25009: Gamified Environmental Education Platform for Schools and Colleges",
-    "SIH25013: Real-Time Public Transport Tracking for Small Cities",
-    "SIH25014: Waste Segregation Monitoring System for Urban Local Bodies",
-    "SIH25020: Development of indigenous contactless Integrated Track Monitoring Systems (ITMS) for Track Recording on Indian Railways",
-    "SIH25023: AyurSutra — Panchakarma Patient Management and therapy scheduling",
-    "SIH25025: E-tongue for Dravya identification",
-    "SIH25026: Develop API code to integrate NAMASTE / ICD-11 Traditional Medicine Module 2 (TM2) into existing EMR systems",
-    "SIH25030: AI-Based Crop Recommendation for Farmers",
-    "SIH25033: AI-Based Smart Allocation Engine for PM Internship Scheme",
-    "SIH25036: Development of Sensor for Detection of Microplastics",
-    "SIH25038: Blockchain-Based Blue Carbon Registry and MRV System",
-    "SIH25044: AI-Powered Crop Yield Prediction and Optimization",
-    "SIH25051: Renewable Energy Monitoring System for Microgrids",
-    "SIH25064: Improving the Renewable Energy hosting capacity in Distribution Feeders",
-  ];
+  const thoughts = useMemo(
+    () => [
+      "SIH25001: Smart Community Health Monitoring and Early Warning System for Water-Borne Diseases in Rural Northeast India",
+      "SIH25002: Smart Tourist Safety Monitoring & Incident Response System using AI, Geo-Fencing, and Blockchain-based Digital ID",
+      "SIH25003: Low-Cost smart transportation solution for agri produce from remote farms to nearest motorable road in NER Region",
+      "SIH25004: Image based breed recognition for cattle and buffaloes of India",
+      "SIH25006: Development of a Digital Farm Management Portal for implementing biosecurity measures in Pig and Poultry Farms",
+      "SIH25008: Disaster Preparedness and Response Education System for Schools and Colleges",
+      "SIH25009: Gamified Environmental Education Platform for Schools and Colleges",
+      "SIH25013: Real-Time Public Transport Tracking for Small Cities",
+      "SIH25014: Waste Segregation Monitoring System for Urban Local Bodies",
+      "SIH25020: Development of indigenous contactless Integrated Track Monitoring Systems (ITMS) for Track Recording on Indian Railways",
+      "SIH25023: AyurSutra — Panchakarma Patient Management and therapy scheduling",
+      "SIH25025: E-tongue for Dravya identification",
+      "SIH25026: Develop API code to integrate NAMASTE / ICD-11 Traditional Medicine Module 2 (TM2) into existing EMR systems",
+      "SIH25030: AI-Based Crop Recommendation for Farmers",
+      "SIH25033: AI-Based Smart Allocation Engine for PM Internship Scheme",
+      "SIH25036: Development of Sensor for Detection of Microplastics",
+      "SIH25038: Blockchain-Based Blue Carbon Registry and MRV System",
+      "SIH25044: AI-Powered Crop Yield Prediction and Optimization",
+      "SIH25051: Renewable Energy Monitoring System for Microgrids",
+      "SIH25064: Improving the Renewable Energy hosting capacity in Distribution Feeders",
+    ],
+    []
+  );
 
   const gunSoundRef = useRef<HTMLAudioElement | null>(null);
   useEffect(() => {
@@ -188,7 +191,7 @@ const CustomCursor: React.FC = () => {
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [floorY, gravity, friction, bullets]);
+  }, [floorY, gravity, friction, bullets, thoughts]);
 
   return (
     <>
@@ -256,7 +259,7 @@ const CustomCursor: React.FC = () => {
 
       {/* Funny Thought */}
       {currentThought && (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed top-[100px] md:top-[120px] left-1/2 -translate-x-1/2 z-50">
           <div className="px-4 py-2 rounded-xl bg-black/70 backdrop-blur-md border border-white/10 shadow-lg animate-slide-up">
             <p className="text-sm font-medium text-white tracking-tight">
               {currentThought}

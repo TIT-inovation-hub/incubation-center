@@ -44,10 +44,6 @@
 }
 
 * {
-  cursor: none !important;
-}
-
-* {
   user-select: none;
 }
 

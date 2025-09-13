@@ -17,6 +17,7 @@ export const FloatingNav = ({
     name: string;
     link: string;
     icon?: JSX.Element;
+    isSpecial?: boolean;
   }[];
   className?: string;
 }) => {
@@ -30,7 +31,7 @@ export const FloatingNav = ({
       if (current < 0.05) {
         setVisible(true);
       } else {
-        setVisible(direction < 0); // scroll up = show, scroll down = hide
+        setVisible(direction < 0);
       }
     }
   });
@@ -44,12 +45,13 @@ export const FloatingNav = ({
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.25 }}
           className={cn(
-            "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-8 py-4 backdrop-blur-lg backdrop-saturate-150 shadow-lg items-center justify-center space-x-6",
+            // mobile = wide, lg+ = shrink and float
+            "flex w-[90%] sm:w-[80%] lg:w-auto lg:max-w-fit fixed z-[5000] top-6 inset-x-0 mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 backdrop-blur-lg backdrop-saturate-150 shadow-lg items-center justify-center space-x-3 sm:space-x-6 !cursor-pointer",
             className
           )}
           style={{
-            background: "rgba(20, 25, 40, 0.65)", // darker glassy background
-            border: "1px solid rgba(255, 255, 255, 0.1)", // subtle border
+            background: "rgba(20, 25, 40, 0.65)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
             borderRadius: "16px",
             backdropFilter: "blur(24px) saturate(180%)",
           }}
@@ -58,14 +60,20 @@ export const FloatingNav = ({
             <Link
               key={`link-${idx}`}
               href={navItem.link}
-              className="relative flex items-center space-x-2 text-neutral-200 hover:text-white transition-colors duration-200"
-            >
-              {navItem.icon && (
-                <span className="block sm:hidden">{navItem.icon}</span>
+              className={cn(
+                "relative flex items-center space-x-2 transition-colors duration-200 px-2 sm:px-3 py-1 rounded-md text-neutral-200 hover:text-white hover:underline underline-offset-4"
               )}
-              <span className="text-sm font-medium !cursor-pointer">
+            >
+              {navItem.icon && <span>{navItem.icon}</span>}
+              <span className="text-xs sm:text-sm md:text-base">
                 {navItem.name}
               </span>
+
+              {navItem.isSpecial && (
+                <span className="ml-2 text-[10px] font-semibold uppercase tracking-wide text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full absolute -top-3 -right-2">
+                  New
+                </span>
+              )}
             </Link>
           ))}
         </motion.div>
