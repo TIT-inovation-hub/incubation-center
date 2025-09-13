@@ -24,7 +24,7 @@ export default function HeroPage() {
               </button>
             </div>
             <a
-              href="https://whatsapp.com/channel/YOUR_CHANNEL_LINK"
+              href="https://chat.whatsapp.com/Bwpe1bKpsQW9wUuKCpHLho?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2"
