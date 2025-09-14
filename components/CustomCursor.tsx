@@ -69,6 +69,14 @@ const CustomCursor: React.FC = () => {
     }
   }, []);
 
+  // Auto-hide thought after 5s
+  useEffect(() => {
+    if (currentThought) {
+      const timer = setTimeout(() => setCurrentThought(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentThought]);
+
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -111,7 +119,9 @@ const CustomCursor: React.FC = () => {
       if (typeof window === "undefined") return;
 
       setGhosts((prev) => {
-        if (prev.filter((g) => g.alive).length >= 10) return prev; // limit
+        const isMobile = window.innerWidth <= 768;
+        const limit = isMobile ? 4 : 8;
+        if (prev.filter((g) => g.alive).length >= limit) return prev; // limit
         const x = Math.random() * (window.innerWidth - 40);
         const y = Math.random() * (window.innerHeight - 100);
 
