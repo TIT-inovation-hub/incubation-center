@@ -9,9 +9,9 @@ const hackathons = [
   {
     name: "Smart India Hackathon",
     description:
-      "AI & Innovation Hackathon organized by TIT-E Incubation Cell.",
-    formLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSfQtXuuM_lnQAZZCLm2LO8F8gVcDa8BF43aEcPUUPpB6wz1cw/viewform",
+      "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
+    teamLink: "https://forms.gle/teguh4ZYFsWoKpG7A",
+    soloLink: "https://forms.gle/v23gE8qHLk6FHSFs7",
     image: "/SIH.png",
   },
 ];
@@ -51,9 +51,16 @@ export default function Hackathons() {
                 </p>
                 <Button
                   className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center group"
-                  onClick={() => window.open(hackathon.formLink, "_blank")}
+                  onClick={() => window.open(hackathon.teamLink, "_blank")}
                 >
-                  Join Hackathon
+                  Join Team ( we have team )
+                </Button>
+
+                <Button
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 flex items-center justify-center group mt-4"
+                  onClick={() => window.open(hackathon.soloLink, "_blank")}
+                >
+                  Join Solo ( I need team )
                 </Button>
               </CardContent>
             </Card>
