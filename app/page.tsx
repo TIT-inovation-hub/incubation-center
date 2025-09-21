@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import Hero from "@/components/Hero";
 import { useState } from "react";
 
 export default function HeroPage() {
@@ -8,7 +8,7 @@ export default function HeroPage() {
 
   return (
     <>
-      <HeroSection />
+      <Hero />
 
       {/* Floating WhatsApp Join Button */}
       {showPopup && (

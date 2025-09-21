@@ -34,8 +34,8 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             {/* External link → keep <a> */}
             <Link
-              href="/hackathons"
-              className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center group"
+              href="/hackathons/sih"
+              className="bg-gradient-to-r bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center group"
             >
               Register for SIH
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

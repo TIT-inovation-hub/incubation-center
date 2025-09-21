@@ -3,15 +3,13 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-// Add `image` property to hackathon objects
 const hackathons = [
   {
     name: "Smart India Hackathon",
     description:
       "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
-    teamLink: "https://forms.gle/teguh4ZYFsWoKpG7A",
-    soloLink: "https://forms.gle/v23gE8qHLk6FHSFs7",
     image: "/SIH.png",
   },
 ];
@@ -46,22 +44,16 @@ export default function Hackathons() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-neutral-400 mb-4 text-center">
-                  {hackathon.description}
-                </p>
-                <Button
-                  className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center group"
-                  onClick={() => window.open(hackathon.teamLink, "_blank")}
-                >
-                  Join Team ( we have team )
-                </Button>
-
-                <Button
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 flex items-center justify-center group mt-4"
-                  onClick={() => window.open(hackathon.soloLink, "_blank")}
-                >
-                  Join Solo ( I need team )
-                </Button>
+                <div className="flex">
+                  <Link href={"/hackathons/sih"} className="mx-auto">
+                    <Button
+                      className="bg-blue-800 font-bold text-white px-6 py-2 rounded 
+                   hover:bg-blue-700 transition-colors duration-200"
+                    >
+                      Join Hackathon
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           ))}

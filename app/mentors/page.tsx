@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Linkedin, Mail, Search, Filter } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function HallOfFame() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -155,7 +156,7 @@ export default function HallOfFame() {
             >
               <div className="relative p-6 pb-4">
                 <div className="flex items-start gap-4">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
                     className="w-20 h-20 rounded-full object-cover border border-gray-700"
