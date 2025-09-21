@@ -159,10 +159,9 @@ export default function SIH() {
                     <div className="flex justify-between items-center">
                       <div>
                         <h3 className="text-lg sm:text-xl font-semibold">
-                          {team.teamName.toUpperCase()}
+                          Team {team.teamName.toUpperCase()}
                         </h3>
                         <p className="text-gray-400 text-sm sm:text-base">
-                          Leader:{" "}
                           {team.leader.name
                             .toLowerCase()
                             .split(" ")
