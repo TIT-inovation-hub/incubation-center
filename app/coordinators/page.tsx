@@ -20,8 +20,7 @@ export default function HallOfFame() {
       ],
       contact: "8602968862",
       email: "aman2005mishra@gmail.com",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHRuQHlYd0YyQ/profile-displayphoto-shrink_800_800/B4DZZJVbhJH4Ac-/0/1744987078803?e=1760572800&v=beta&t=XYRfbsI1INugUzSUcHSOXqe5CqRFkkAPlK4PGtpB9ok",
+      image: "/aman.png",
       socials: {
         github: "https://github.com/shreyashristi25",
         linkedin: "https://www.linkedin.com/in/aman-mishra-116b63280",
@@ -38,8 +37,7 @@ export default function HallOfFame() {
       ],
       contact: "9984753791",
       email: "kushdwivedikd@gmail.com",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4E03AQG5-iwtXiZvTg/profile-displayphoto-shrink_800_800/B4EZRxNdDQHgAc-/0/1737066140641?e=1760572800&v=beta&t=iRQ78wsSzkj1rTSglODL2w1_oMVAw8bkjQRqVCsnxwg",
+      image: "/kushagra.png",
       socials: {
         github: "https://github.com/shreyashristi25",
         linkedin: "https://www.linkedin.com/in/kushagra-dwivedi-0342062b8",
@@ -56,8 +54,7 @@ export default function HallOfFame() {
       ],
       contact: "7000673152",
       email: "prakhar.aka.nb@gmail.com",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHslmGH_WiX6w/profile-displayphoto-shrink_800_800/B4DZPBifRWHQAc-/0/1734118865362?e=1760572800&v=beta&t=w6LvIlinB-LRcUPfQlRSdmfaBW3-Ae3B5K0NFslgSu0",
+      image: "/prakhar.png",
       socials: {
         github: "https://github.com/shreyashristi25",
         linkedin: "https://www.linkedin.com/in/prakhar-shrivastav-a98bb8337",
@@ -159,6 +156,8 @@ export default function HallOfFame() {
                   <Image
                     src={member.image}
                     alt={member.name}
+                    width={80}
+                    height={80}
                     className="w-20 h-20 rounded-full object-cover border border-gray-700"
                   />
                   <div>

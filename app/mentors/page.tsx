@@ -20,8 +20,7 @@ export default function HallOfFame() {
       ],
       contact: "9826039844",
       email: "amar.n1975@gmail.com",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQF3sb5Gohc5Bw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693071457900?e=1760572800&v=beta&t=J_okTDmTCRBpOyQsKo72ZOo_W6YWXzO0yJYr-uIq8T0",
+      image: "/amar.png",
       socials: {
         github: "https://github.com/shreyashristi25",
         linkedin: "https://www.linkedin.com/in/amar-nayak-11945376/",
@@ -38,8 +37,7 @@ export default function HallOfFame() {
       ],
       contact: "9826039844",
       email: "Rachanakamble@gmail.com",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D03AQHtg5J3WO5HKA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694587494209?e=1760572800&v=beta&t=bgVlbZBm8fQa5r3JodSG2uSN91O0cg0ELFQ2J5FXuc4",
+      image: "/rachana.png",
       socials: {
         github: "https://github.com/shreyashristi25",
         linkedin:
@@ -159,6 +157,8 @@ export default function HallOfFame() {
                   <Image
                     src={member.image}
                     alt={member.name}
+                    width={80}
+                    height={80}
                     className="w-20 h-20 rounded-full object-cover border border-gray-700"
                   />
                   <div>

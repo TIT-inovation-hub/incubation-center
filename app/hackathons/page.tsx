@@ -12,6 +12,12 @@ const hackathons = [
       "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
     image: "/SIH.png",
   },
+  {
+    name: "EY Techathon 6.0",
+    description:
+      "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
+    image: "/techathon.jpeg",
+  },
 ];
 
 export default function Hackathons() {
