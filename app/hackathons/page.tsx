@@ -11,12 +11,14 @@ const hackathons = [
     description:
       "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
     image: "/SIH.png",
+    url: "/hackathons/sih",
   },
   {
     name: "EY Techathon 6.0",
     description:
       "The SIH Internal Round Selection, organized by the Incubation Cell, TIT-E.",
     image: "/techathon.jpeg",
+    url: "https://forms.gle/CGEphRctAELAGU7v8",
   },
 ];
 
@@ -51,7 +53,7 @@ export default function Hackathons() {
               </CardHeader>
               <CardContent>
                 <div className="flex">
-                  <Link href={"/hackathons/sih"} className="mx-auto">
+                  <Link href={hackathon.url} className="mx-auto">
                     <Button
                       className="bg-blue-800 font-bold text-white px-6 py-2 rounded 
                    hover:bg-blue-700 transition-colors duration-200"
