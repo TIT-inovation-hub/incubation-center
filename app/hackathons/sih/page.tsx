@@ -171,7 +171,7 @@ export default function SIH() {
                       </div>
                       <div className="flex items-center gap-4">
                         <p className="text-2xl sm:text-3xl font-bold text-blue-400">
-                          # {index + 1}
+                          #{index + 1}
                         </p>
                         <button
                           onClick={() => setExpanded(isOpen ? null : index)}
