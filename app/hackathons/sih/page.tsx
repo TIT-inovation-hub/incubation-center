@@ -24,7 +24,7 @@ export default function SIH() {
   }, []);
 
   useEffect(() => {
-    const targetDate = new Date("2025-09-25T00:00:00+05:30"); // IST
+    const targetDate = new Date("2025-09-26T00:00:00+05:30"); // IST
 
     function updateTimer() {
       const now = new Date();
@@ -70,7 +70,7 @@ export default function SIH() {
         </div>
 
         {/* Registration Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 sm:mb-16">
+        <div className="flex justify-center align-middle gap-8 mb-12 sm:mb-16">
           <div className="bg-gray-900 p-6 sm:p-8 rounded-lg border border-gray-700">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
               Register as a Team
@@ -97,25 +97,6 @@ export default function SIH() {
                 className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
               >
                 Register Team
-              </a>
-            </div>
-          </div>
-          <div className="bg-gray-900 p-6 sm:p-8 rounded-lg border border-gray-700">
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-              Register as Solo
-            </h2>
-            <p className="text-gray-400 mb-6">
-              Don&apos;t have a team yet? No worries! Register as a solo
-              participant and find your team.
-            </p>
-            <div className="flex flex-col gap-2">
-              <a
-                href={"https://forms.gle/v23gE8qHLk6FHSFs7"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors text-center"
-              >
-                Register Solo
               </a>
             </div>
           </div>
