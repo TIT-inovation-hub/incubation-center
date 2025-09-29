@@ -11,12 +11,39 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const gallery = [
-    { src: "/amar.png", category: "Coordinators", title: "Amar Nayak" },
-    { src: "/rachana.png", category: "Coordinators", title: "Rachna Kamble" },
-    { src: "/ram.png", category: "Developers", title: "Ram Sahu" },
-    { src: "/event1.png", category: "Event", title: "Hackathon 2025" },
-    { src: "/event2.png", category: "Event", title: "Community Meetup" },
-    { src: "/event3.png", category: "Event", title: "Tech Workshop" },
+    { src: "/audience.jpeg", category: "Coordinators", title: "Amar Nayak" },
+    {
+      src: "/audience2.jpeg",
+      category: "Coordinators",
+      title: "Rachna Kamble",
+    },
+    { src: "/certificate.jpeg", category: "Developers", title: "Ram Sahu" },
+    { src: "/certificate2.jpeg", category: "Event", title: "Hackathon 2025" },
+    { src: "/certificate3.jpeg", category: "Event", title: "Community Meetup" },
+    { src: "/certificate4.jpeg", category: "Event", title: "Tech Workshop" },
+    { src: "/dignitories.jpg", category: "Coordinators", title: "Amar Nayak" },
+    {
+      src: "/dignitories2.jpeg",
+      category: "Coordinators",
+      title: "Rachna Kamble",
+    },
+    { src: "/dignitories3.jpeg", category: "Developers", title: "Ram Sahu" },
+    { src: "/dignitories4.jpeg", category: "Event", title: "Hackathon 2025" },
+    {
+      src: "/directorSpeech.jpeg",
+      category: "Event",
+      title: "Community Meetup",
+    },
+    { src: "/lightninglamp.jpeg", category: "Event", title: "Tech Workshop" },
+    { src: "/lightninglamp2.jpeg", category: "Developers", title: "Ram Sahu" },
+    { src: "/lightninglamp3.jpeg", category: "Event", title: "Hackathon 2025" },
+    {
+      src: "/nationalanthem.jpeg",
+      category: "Event",
+      title: "Community Meetup",
+    },
+    { src: "/organisers.jpg", category: "Event", title: "Tech Workshop" },
+    { src: "/welcomeGuest.jpeg", category: "Event", title: "Tech Workshop" },
   ];
 
   return (
@@ -55,7 +82,7 @@ export default function GalleryPage() {
             >
               <Card
                 onClick={() => setSelectedImage(item.src)}
-                className="cursor-pointer bg-black border border-gray-800 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20 transition-all overflow-hidden rounded-2xl"
+                className="cursor-pointer bg-black border border-gray-800 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20 transition-all overflow-hidden rounded-2xl p-0"
               >
                 <Image
                   src={item.src}
@@ -100,7 +127,7 @@ export default function GalleryPage() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white hover:text-blue-400"
+                className="absolute top-4 right-4 text-black bg-white hover:border-2 hover:border-blue-400"
               >
                 <X className="w-6 h-6" />
               </Button>

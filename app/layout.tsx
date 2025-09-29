@@ -34,7 +34,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const navItems = [
-    { name: "Home", link: "/" },
     { name: "Coordinators", link: "/coordinators" },
     { name: "Mentors", link: "/mentors" },
     { name: "Gallery", link: "/gallery" },
