@@ -37,6 +37,7 @@ export default function RootLayout({
     { name: "Home", link: "/" },
     { name: "Coordinators", link: "/coordinators" },
     { name: "Mentors", link: "/mentors" },
+    { name: "Gallery", link: "/gallery" },
     { name: "Hackathons", link: "/hackathons", isSpecial: true },
   ];
   return (
