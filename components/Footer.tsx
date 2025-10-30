@@ -1,88 +1,114 @@
-"use client";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Heart, ArrowUp } from "lucide-react";
-
-const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
-
-export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace("#", ""));
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
+export default function Footer() {
   return (
-    <footer className="bg-black border-t border-gray-800 text-gray-300">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">Prakhar Shrivastav</h3>
-            <p className="text-gray-400">
-              Full-Stack Developer & CTO passionate about building innovative
-              solutions that make a difference.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-white">Quick Links</h4>
-            <div className="flex flex-col space-y-2">
-              {quickLinks.map((link) => (
-                <Button
-                  key={link.label}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => scrollToSection(link.href)}
-                  className="justify-start p-0 h-auto text-gray-400 hover:text-white"
-                >
-                  {link.label}
-                </Button>
-              ))}
+    <footer className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-primary font-bold text-sm">TIT</span>
+              </div>
+              <span className="font-bold">TIT Excellence</span>
             </div>
+            <p className="text-sm opacity-80">
+              Fostering innovation and entrepreneurship among students.
+            </p>
           </div>
 
-          {/* Contact CTA */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-white">Ready to Collaborate?</h4>
-            <p className="text-sm text-gray-400">
-              Let's discuss your next project and bring your ideas to life.
-            </p>
-            <Button
-              onClick={() => scrollToSection("#contact")}
-              className="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white"
-            >
-              Get In Touch
-            </Button>
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-accent transition-colors"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#mentors"
+                  className="hover:text-accent transition-colors"
+                >
+                  Mentors
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#events"
+                  className="hover:text-accent transition-colors"
+                >
+                  Events
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#coordinators"
+                  className="hover:text-accent transition-colors"
+                >
+                  Team
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm opacity-80">
+              <li className="flex items-center gap-2">
+                <Mail size={16} />
+                <span>info@titexcellence.edu</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone size={16} />
+                <span>+91 (0) 123-456-7890</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin size={16} />
+                <span>TIT Campus, City</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Follow Us</h4>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="#"
+                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href="#"
+                className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+              >
+                <Instagram size={20} />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500">
-            © 2024 Prakhar Shrivastav. Made with{" "}
-            <Heart className="inline h-4 w-4 text-red-500" /> using Next.js &
-            shadcn/ui
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-80">
+          <p>
+            &copy; 2025 TIT Excellence Incubation Cell. All rights reserved.
           </p>
-
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={scrollToTop}
-            className="mt-4 md:mt-0 bg-gray-900 border-gray-700 text-gray-200 hover:bg-gray-800 hover:text-white hover:border-gray-500 hover:scale-110 transition-transform shadow-sm"
-          >
-            <ArrowUp className="h-4 w-4" />
-            <span className="sr-only">Back to top</span>
-          </Button>
         </div>
       </div>
     </footer>

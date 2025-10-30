@@ -1,22 +1,22 @@
 "use client";
+import Navigation from "@/components/navigation";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import Mentors from "@/components/mentors";
+import Coordinators from "@/components/coordinators";
+import Events from "@/components/events";
+import Footer from "@/components/footer";
 
-import HeroSection from "@/components/HeroSection";
-import { Footer } from "@/components/Footer";
-import { FloatingNav } from "@/components/Navbar";
-
-const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
-];
-
-export default function HeroPage() {
+export default function Home() {
   return (
-    <>
-      <FloatingNav navItems={navItems} />
-      <HeroSection />
+    <main className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      <Hero />
+      <About />
+      <Mentors />
+      <Coordinators />
+      <Events />
       <Footer />
-    </>
+    </main>
   );
 }
