@@ -55,7 +55,7 @@ export default function Coordinators() {
           {coordinators.map((coordinator) => (
             <div
               key={coordinator.name}
-              className="group bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-lg overflow-hidden hover:border-accent transition-all duration-300"
+              className="group bg-linear-to-br from-primary/5 to-accent/5 border border-border rounded-lg overflow-hidden hover:border-accent transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden bg-muted">
                 <img
