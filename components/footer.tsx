@@ -15,9 +15,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="incubationlogo.png"
+                src="logoincubation.png"
                 alt="incubation logo"
-                className="h-12 w-auto object-contain"
+                className="h-12 w-auto object-contain rounded-xl"
               />
               <span className="font-bold">INCUBATION</span>
               <span className="font-bold text-[#EF6C00]">TITE</span>
