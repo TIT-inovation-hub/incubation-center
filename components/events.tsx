@@ -71,10 +71,10 @@ export default function Events() {
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* === Heading === */}
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
           Our Events
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed">
+        <p className="text-base sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed">
           Explore our lineup of inspiring competitions, workshops, and
           networking experiences — designed to spark innovation and empower
           entrepreneurs.
