@@ -14,10 +14,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-sm">TIT</span>
-              </div>
-              <span className="font-bold">TIT Excellence</span>
+              <img
+                src="incubationLogo.png"
+                alt="incubation logo"
+                className="h-12 w-auto object-contain"
+              />
+              <span className="font-bold">INCUBATION</span>
+              <span className="font-bold text-[#EF6C00]">TITE</span>
             </div>
             <p className="text-sm opacity-80">
               Fostering innovation and entrepreneurship among students.
@@ -71,11 +74,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} />
-                <span>+91 (0) 123-456-7890</span>
+                <span>+91 7000673152</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={16} />
-                <span>TIT Campus, City</span>
+                <span>TIT Excellence,B-block,2nd floor,Bhopal</span>
               </li>
             </ul>
           </div>

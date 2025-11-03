@@ -1,40 +1,22 @@
 export default function Coordinators() {
   const coordinators = [
     {
-      name: "Aditya Verma",
+      name: "PRAKHAR SHRIVASTAV",
       role: "Lead Coordinator",
       department: "CSE",
       image: "/student-coordinator-leader.jpg",
     },
     {
-      name: "Sneha Gupta",
-      role: "Events Coordinator",
-      department: "ECE",
+      name: "AMAN MISHRA",
+      role: "Mentorship Coordinator",
+      department: "CSE",
       image: "/student-coordinator-events.jpg",
     },
     {
-      name: "Rohan Singh",
-      role: "Mentorship Coordinator",
-      department: "Mechanical",
+      name: "KUSHAGRA DWIVEDI",
+      role: "Events Coordinator",
+      department: "CYBER-SECURITY",
       image: "/student-coordinator-mentorship.jpg",
-    },
-    {
-      name: "Isha Patel",
-      role: "Marketing Coordinator",
-      department: "IT",
-      image: "/student-coordinator-marketing.jpg",
-    },
-    {
-      name: "Vikram Reddy",
-      role: "Finance Coordinator",
-      department: "Civil",
-      image: "/student-coordinator-finance.jpg",
-    },
-    {
-      name: "Ananya Desai",
-      role: "Operations Coordinator",
-      department: "CSE",
-      image: "/student-coordinator-operations.jpg",
     },
   ];
 
