@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="incubationLogo.png"
+                src="incubationlogo.png"
                 alt="incubation logo"
                 className="h-12 w-auto object-contain"
               />

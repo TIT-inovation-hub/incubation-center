@@ -15,23 +15,27 @@ export default function Mentors() {
     {
       name: "MR.RAM SAHU",
       title: "Investment Advisor",
-      expertise: "Managment",
+      expertise: "Management",
       image: "/professional-mentor-finance-advisor.jpg",
     },
   ];
 
   return (
-    <section id="mentors" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="mentors"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 w-full"
+    >
+      <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">Our Mentors</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Learn from industry leaders and experienced entrepreneurs who are
-            committed to your success
+            committed to your success.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* ✅ Adjusted grid for 3 mentors */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {mentors.map((mentor) => (
             <div
               key={mentor.name}

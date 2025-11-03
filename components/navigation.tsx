@@ -99,6 +99,14 @@ const NavbarComponent = () => {
 
           {/* Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Apply Button (Outlined Style) */}
+            <a
+              href="#"
+              className="hidden md:inline-block px-6 sm:px-7 py-3 border-2 border-[#EF6C00] text-[#EF6C00] text-base sm:text-lg font-semibold rounded-2xl transition-colors hover:bg-[#EF6C00] hover:text-white shadow-sm"
+            >
+              Apply
+            </a>
+
             {/* Desktop Login */}
             <a
               href="#"
@@ -228,8 +236,15 @@ const NavbarComponent = () => {
               </li>
             ))}
 
-            {/* Login (mobile) */}
-            <li className="pt-3 border-t border-gray-200">
+            {/* Apply + Login (mobile) */}
+            <li className="pt-3 border-t border-gray-200 flex flex-col gap-2">
+              <a
+                href="#"
+                className="block text-center w-full py-2 border-2 border-[#EF6C00] text-[#EF6C00] font-semibold rounded-xl shadow-sm hover:bg-[#EF6C00] hover:text-white transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Apply
+              </a>
               <a
                 href="#"
                 className="block text-center w-full py-2 bg-[#EF6C00] text-white font-semibold rounded-xl shadow-md hover:bg-orange-700"
