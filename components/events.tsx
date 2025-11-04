@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, Info } from "lucide-react";
+import Image from "next/image";
 
 interface EventItem {
   id: number;
@@ -19,12 +20,12 @@ export default function Events() {
   const events: EventItem[] = [
     {
       id: 1,
-      title: "Startup Pitch Competition",
-      date: "March 15, 2024",
-      category: "Competition",
-      image: "/startup-pitch-competition-event.jpg",
+      title: "SIH Internal Hackathon",
+      date: "September 28, 2025",
+      category: "Event",
+      image: "/sihinternal.jpg",
       description:
-        "A thrilling competition where student entrepreneurs pitch their innovative ideas to a panel of investors and industry experts. Winners receive funding and mentorship opportunities.",
+        "An exciting hackathon where students showcase creativity and problem-solving to qualify for the national Smart India Hackathon.",
       highlights: [
         "Prize Pool: ₹5 Lakhs",
         "50+ Participants",
@@ -34,12 +35,12 @@ export default function Events() {
     },
     {
       id: 2,
-      title: "Entrepreneurship Workshop",
-      date: "February 28, 2024",
+      title: "SIH Workshop",
+      date: "September 20, 2025",
       category: "Workshop",
-      image: "/entrepreneurship-workshop-training.jpg",
+      image: "/workshop.jpg",
       description:
-        "Comprehensive workshop covering business fundamentals, market research, and startup strategies. Learn from successful entrepreneurs and industry veterans.",
+        "A preparatory workshop guiding students through problem-solving, ideation, and prototype development for the Smart India Hackathon.",
       highlights: [
         "Expert Speakers",
         "200+ Attendees",
@@ -49,12 +50,12 @@ export default function Events() {
     },
     {
       id: 3,
-      title: "Investor Meet & Greet",
-      date: "March 22, 2024",
-      category: "Networking",
-      image: "/investor-networking-event-meeting.jpg",
+      title: "Oracle Certification Workshop",
+      date: "November 8, 2025",
+      category: "Workshop",
+      image: "/oracle.avif",
       description:
-        "Exclusive networking event connecting student entrepreneurs with angel investors and venture capitalists. Showcase your ideas and secure potential funding.",
+        "A skill-building workshop designed to help students prepare for Oracle certification exams with expert guidance.",
       highlights: [
         "20+ Investors",
         "One-on-One Meetings",
@@ -90,10 +91,13 @@ export default function Events() {
             >
               {/* === Image === */}
               <div className="relative h-64 sm:h-72 overflow-hidden rounded-t-2xl">
-                <img
+                <Image
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority
                 />
                 <div className="absolute top-3 right-3 bg-[#EF6C00] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                   {event.category}
@@ -136,17 +140,22 @@ export default function Events() {
               <button
                 onClick={() => setSelectedEvent(null)}
                 className="p-2 hover:bg-gray-100 dark:hover:bg-white/10 rounded-lg transition"
+                aria-label="Close modal"
               >
                 <X size={22} />
               </button>
             </div>
 
             <div className="p-6 space-y-6">
-              <img
-                src={selectedEvent.image}
-                alt={selectedEvent.title}
-                className="w-full h-80 object-cover rounded-xl"
-              />
+              <div className="relative w-full h-80 rounded-xl overflow-hidden">
+                <Image
+                  src={selectedEvent.image}
+                  alt={selectedEvent.title}
+                  fill
+                  className="object-cover rounded-xl"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 700px"
+                />
+              </div>
 
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
                 {selectedEvent.description}

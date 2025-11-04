@@ -6,29 +6,41 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {/* Logo & Description */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img
-                src="logoincubation.png"
-                alt="incubation logo"
-                className="h-12 w-auto object-contain rounded-xl"
-              />
-              <span className="font-bold">INCUBATION</span>
-              <span className="font-bold text-[#EF6C00]">TITE</span>
+              <div className="relative h-12 w-12 sm:h-14 sm:w-14 rounded-xl overflow-hidden">
+                <Image
+                  src="/logoincubation.png"
+                  alt="Incubation logo"
+                  fill
+                  className="object-contain rounded-xl"
+                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 56px, 64px"
+                  priority
+                />
+              </div>
+              <span className="font-bold text-lg sm:text-xl">INCUBATION</span>
+              <span className="font-bold text-[#EF6C00] text-lg sm:text-xl">
+                TITE
+              </span>
             </div>
-            <p className="text-sm opacity-80">
+            <p className="text-sm opacity-80 leading-relaxed">
               Fostering innovation and entrepreneurship among students.
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-base sm:text-lg">
+              Quick Links
+            </h4>
             <ul className="space-y-2 text-sm opacity-80">
               <li>
                 <a
@@ -65,8 +77,9 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4 text-base sm:text-lg">Contact</h4>
             <ul className="space-y-3 text-sm opacity-80">
               <li className="flex items-center gap-2">
                 <Mail size={16} />
@@ -76,31 +89,37 @@ export default function Footer() {
                 <Phone size={16} />
                 <span>+91 7000673152</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin size={16} />
-                <span>TIT Excellence,B-block,2nd floor,Bhopal</span>
+              <li className="flex items-start gap-2">
+                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
+                <span>TIT Excellence, B-block, 2nd floor, Bhopal</span>
               </li>
             </ul>
           </div>
 
+          {/* Social Links */}
           <div>
-            <h4 className="font-semibold mb-4">Follow Us</h4>
+            <h4 className="font-semibold mb-4 text-base sm:text-lg">
+              Follow Us
+            </h4>
             <div className="flex gap-4">
               <a
                 href="#"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="#"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
                 className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
@@ -108,6 +127,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom Footer */}
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-80">
           <p>
             &copy; 2025 TIT Excellence Incubation Cell. All rights reserved.

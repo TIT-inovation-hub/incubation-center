@@ -1,22 +1,42 @@
+import Image from "next/image";
+
 export default function Coordinators() {
   const coordinators = [
     {
       name: "PRAKHAR SHRIVASTAV",
-      role: "Lead Coordinator",
+      role: "Tech Lead",
       department: "CSE",
-      image: "prakhar.jpg",
+      image: "/prakhar.jpg",
     },
     {
       name: "AMAN MISHRA",
-      role: "Mentorship Coordinator",
+      role: "App Developer",
       department: "CSE",
-      image: "aman.jpg",
+      image: "/aman.jpg",
     },
     {
       name: "KUSHAGRA DWIVEDI",
       role: "Events Coordinator",
       department: "CYBER SECURITY",
-      image: "kushagra.jpg",
+      image: "/kushagra.jpg",
+    },
+    {
+      name: "AKASH KUMAR",
+      role: "App Developer",
+      department: "CSE",
+      image: "/akash.jpg",
+    },
+    {
+      name: "KEERTI BISEN",
+      role: "Web Developer",
+      department: "CSE",
+      image: "/keerti.jpg",
+    },
+    {
+      name: "AMIT KUMAR MEHTA",
+      role: "Project Manager",
+      department: "CSE",
+      image: "/amit.jpg",
     },
   ];
 
@@ -30,24 +50,27 @@ export default function Coordinators() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
           Our Coordinators
         </h2>
-        <p className="text-base sm:text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 sm:mb-14 leading-relaxed">
           Meet our dedicated coordinators who lead innovation, collaboration,
           and execution — driving the cell’s activities with energy and passion.
         </p>
 
         {/* Coordinators Grid */}
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 place-items-center">
           {coordinators.map((coordinator) => (
             <div
               key={coordinator.name}
-              className="w-full max-w-sm p-5 sm:p-6 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-white/5 backdrop-blur-sm text-center"
+              className="w-full max-w-xs sm:max-w-sm p-6 rounded-2xl backdrop-blur-sm text-center "
             >
-              {/* Coordinator Image */}
-              <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#EF6C00]/30 dark:border-[#FF9800]/30 shadow-md">
-                <img
-                  src={coordinator.image || "/placeholder.svg"}
+              {/* Image Container */}
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-5 rounded-full overflow-hidden border-2 border-[#EF6C00]/30 dark:border-[#FF9800]/30 shadow-md">
+                <Image
+                  src={coordinator.image}
                   alt={coordinator.name}
-                  className="w-full h-full object-cover object-top"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 140px, (max-width: 1024px) 176px, 176px"
+                  priority
                 />
               </div>
 
