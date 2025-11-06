@@ -15,7 +15,7 @@ export default function Hero() {
 
         {/* 🔸 Circuit Mesh Background */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.08]"
+          className="absolute inset-0 w-full h-full opacity-[0.10]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
