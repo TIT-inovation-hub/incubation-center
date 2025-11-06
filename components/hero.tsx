@@ -2,7 +2,7 @@ import AnimatedDots from "./AnimatedDots";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-4 pb-4 md:pt-20 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFF8F2] to-white dark:from-[#050505] dark:to-[#0B0B0B] transition-colors duration-500">
+    <section className="relative overflow-hidden md:pt-20 md:pb-20 px-4 py-[100px] sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFF8F2] to-white dark:from-[#050505] dark:to-[#0B0B0B] transition-colors duration-500">
       {/* === BACKGROUND GRAPHICS === */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* 🔸 Glowing 3D Blobs */}
@@ -50,13 +50,13 @@ export default function Hero() {
 
       {/* === HERO CONTENT === */}
       <div className="relative z-10 max-w-7xl mx-auto text-center">
-        <div className="inline-block mb-6 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full backdrop-blur-sm">
-          <span className="text-sm font-semibold text-accent">
+        <div className="inline-block mb-10 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full backdrop-blur-sm">
+          <span className="text-lg sm:text-sm font-semibold text-accent">
             Welcome to Innovation Hub
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-gray-900 dark:text-white">
           TIT Excellence
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#EF6C00] via-[#FF9800] to-[#00BCD4] animate-gradient">
             Incubation Cell

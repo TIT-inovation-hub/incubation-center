@@ -236,9 +236,64 @@ const NavbarComponent = () => {
           id="mobile-menu-links"
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:hidden border-t border-gray-200 bg-gray-50`}
+          } md:hidden border-t border-gray-200 bg-white shadow-md`}
         >
-          {/* ... mobile menu unchanged ... */}
+          <ul className="flex flex-col px-5 py-3 space-y-2 text-gray-700 font-medium">
+            {navLinks.map((link) => (
+              <li key={link.name} className="relative">
+                {link.isDropdown ? (
+                  <div ref={dropdownRef} className="relative">
+                    <button
+                      onClick={() => setIsDropdownOpen((prev) => !prev)}
+                      className="w-full text-left py-2 flex items-center justify-between hover:text-[#EF6C00] transition-colors"
+                    >
+                      {link.name}
+                      <span className="text-xs ml-2">▼</span>
+                    </button>
+                    {isDropdownOpen && (
+                      <ul className="mt-1 ml-3 border-l border-gray-200 pl-3 space-y-1">
+                        {dropdownItems.map((item) => (
+                          <li key={item.name}>
+                            <a
+                              href={item.href}
+                              className="block py-1 text-gray-600 hover:text-[#EF6C00] transition-colors"
+                            >
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="block py-2 hover:text-[#EF6C00] transition-colors"
+                    onClick={() => setIsMenuOpen(false)} // close on click
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </li>
+            ))}
+
+            {/* Mobile Buttons */}
+            <div className="mt-3 flex flex-col gap-2">
+              <a
+                href="#"
+                className="w-full text-center px-6 py-2 border-2 border-[#EF6C00] text-[#EF6C00] font-semibold rounded-2xl hover:bg-[#EF6C00] hover:text-white transition"
+              >
+                Apply
+              </a>
+              <a
+                href="#"
+                className="w-full text-center px-6 py-2 bg-[#EF6C00] text-white font-semibold rounded-2xl hover:bg-orange-700 transition relative"
+              >
+                Login
+                <span className="sih-login-dot" />
+              </a>
+            </div>
+          </ul>
         </nav>
       </header>
     </div>
