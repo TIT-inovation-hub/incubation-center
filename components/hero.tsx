@@ -2,7 +2,10 @@ import AnimatedDots from "./AnimatedDots";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden md:pt-20 md:pb-20 px-4 py-[100px] sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFF8F2] to-white dark:from-[#050505] dark:to-[#0B0B0B] transition-colors duration-500">
+    <section
+      id="home"
+      className="relative overflow-hidden md:pt-20 md:pb-20 px-4 py-[100px] sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFF8F2] to-white dark:from-[#050505] dark:to-[#0B0B0B] transition-colors duration-500"
+    >
       {/* === BACKGROUND GRAPHICS === */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* 🔸 Glowing 3D Blobs */}
