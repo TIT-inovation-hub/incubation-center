@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TIT Incubation Hub",
+  title: "done",
   description: "",
 };
 

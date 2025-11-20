@@ -1,23 +1,15 @@
-"use client";
-import Navigation from "@/components/navigation";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Mentors from "@/components/mentors";
-import Coordinators from "@/components/coordinators";
-import Events from "@/components/events";
-import Footer from "@/components/footer";
+import Link from "next/link";
+import React from "react";
 
-export default function Home() {
+export default function page() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      <Hero />
-
-      <About />
-      <Mentors />
-      <Coordinators />
-      <Events />
-      <Footer />
-    </main>
+    <div className="flex h-screen justify-center items-center">
+      <Link
+        href={"https://incubationcell.netlify.app"}
+        className="p-2 border-2 rounded-2xl bg-amber-300"
+      >
+        new website
+      </Link>
+    </div>
   );
 }
